@@ -2,8 +2,13 @@
 rms_seg
 =========
 
-`rms_seg` provides a simple function to compute a segmentation of an audio signal based on
-where its RMS level exceeds a specified threshold value (i.e. very crude silence segmentation).
+`rms_seg` provides the function `rms_segmentation` to compute
+a segmentation of an audio signal based on where its RMS level
+exceeds a specified threshold value (i.e. very crude silence segmentation).
+The function returns a 2-tuple containing a list of segments and the underlying RMS signal;
+segments are 3-tuples containing classification (1 for above threshold, 0 for below),
+and the start and end time of the segment in seconds.
+Adjacent segments always differ in classification.
 
 ------------
 Installation
